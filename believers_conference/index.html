@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDC 2025 Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Registration Form -->
+    <div class="container">
+        <header class="landing-page">
+            <h1>Karibu Believers Dominion Conference 2025!</h1>
+        </header>
+
+        <form id="registrationForm" action="backend/register.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="churchName">Church Name:</label>
+            <input type="text" id="churchName" name="churchName" placeholder="Enter your church name">
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="boardingStatus">Boarding Status:</label>
+            <select id="boardingStatus" name="boardingStatus" required>
+                <option value="Boarder">Boarder</option>
+                <option value="Daytime">Daytime</option>
+            </select>
+
+            <label for="role">Role in the Conference:</label>
+            <select id="role" name="role" required>
+                <option value="Delegate">Delegate</option>
+                <option value="Pastor">Pastor</option>
+                <option value="Host">Host</option>
+                <option value="Guest Speaker">Guest Speaker</option>
+            </select>
+
+            <button type="submit">Register Now</button>
+        </form>
+        <hr>
+        <footer>
+            <p>&copy; 2024 Heavens Gate Media. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Updated to white */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Default font color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body take the full height of the viewport */
+}
+
+/* Container for form and landing page */
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Landing Page Section */
+.landing-page {
+    text-align: center;
+    margin-bottom: 20px;
+    color: navy; /* Updated font color to navy */
+}
+
+.landing-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: navy; /* Navy color for the heading */
+}
+
+.landing-page p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.landing-page .btn {
+    display: inline-block;
+    background-color: navy;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.landing-page .btn:hover {
+    background-color: #444; /* Slightly lighter navy */
+    color: white;
+}
+
+/* Registration Section */
+#registrationForm {
+    margin: 20px 0;
+}
+
+#registrationForm label{
+    text-align: left;
+    margin-bottom: 15px;
+    color: #333; /* Dark gray for headers */
+}
+
+input, select, button {
+    width: calc(100% - 20px); /* Prevent overflow and ensure consistent alignment */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Keeps padding and border within width */
+}
+
+button {
+    background-color: navy; /* Navy button */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e01c1c; /* Slightly lighter navy */
+}
+
+/* Footer Section */
+footer {
+    background-color: #f7f7f7; /* Light gray footer */
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    input, select, button {
+        width: calc(100% - 10px); /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    input, select, button {
+        width: calc(100% - 8px); /* Further adjust padding */
+    }
+
+    button {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}
