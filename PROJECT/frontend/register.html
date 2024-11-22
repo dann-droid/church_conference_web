@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - BDC 2025</title>
+    <title>Register For BDC 2025</title>
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-    <form id="registrationForm">
+    <form id="registrationForm" method="GET">
         <h1>Karibu BDC 2025!</h1>
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="text" name="churchName" placeholder="Church Name" />
-        <input type="text" name="phone" placeholder="Phone Number" required />
+        <input type="text" name="name" placeholder="Full Name" required autocomplete="additional-name"/>
+        <input type="email" name="email" placeholder="Email" required autocomplete="additional-name"/>
+        <input type="text" name="churchName" placeholder="Church Name" autocomplete="additional-name"/>
+        <input type="text" name="phone" placeholder="Phone Number" required autocomplete="additional-name"/>
         <select name="boardingStatus" required>
             <option value="">Are you boarding?</option>
             <option value="Boarder">Boarder</option>
             <option value="Daytime">Daytime Attendee</option>
         </select>
-        <button type="submit">Submit</button>
+        <select name="role" required>
+            <option value="">Role/Position</option>
+            <option value="Delegate">Delegate</option>
+            <option value="Pastor">Pastor</option>
+            <option value="Deacon">Deacon</option>
+            <option value="BDC_Committee">BDC Committee</option>
+        </select>
+        <button type="submit">Register</button>
     </form>
 
-    <script src="javascript/script.js"></script>
+    <hr>
+    <footer>
+        &copy;2025 Heavens Gate Center. All rights reserved.
+    </footer>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>

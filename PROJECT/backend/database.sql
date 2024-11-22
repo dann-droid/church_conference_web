@@ -1,5 +1,4 @@
 
-
 USE bdc_2025;
 
 -- Table to store registration details
@@ -13,3 +12,6 @@ CREATE TABLE registrations (
     unique_id VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE registrations
+ADD COLUMN role ENUM('Delegate', 'Pastor', 'Deacon', 'BDC Committee') NOT NULL DEFAULT 'Delegate';

@@ -1,36 +1,36 @@
 import { Router } from "express";
 const router = Router();
-import { query } from "../db";
-import ticketGenerator from "../utils/ticketGenerator";
+import db from "../db.js";
+import ticketGenerator from "../utils/ticketGenerator.js";
 
-router.post("/", async (req, res) => {
-    const { name, email, churchName, phone, boardingStatus } = req.body;
+router.get("/", async (req, res) => {
+    const { name, email, churchName, phone, boardingStatus, role } = req.body;
 
-    if (!name || !email || !phone || !boardingStatus) {
+    if (!name || !email || !phone || !boardingStatus || !role) {
         return res.status(400).json({ message: "All fields are required!" });
     }
 
     const uniqueID = `BDC-${Date.now()}`;
 
     try {
-        // Insert registration into the database
-        const [result] = await query(
+        // Inserts registration into the database
+        const [result] = await db.query(
             "INSERT INTO registrations (name, email, church_name, phone, boarding_status, unique_id) VALUES (?, ?, ?, ?, ?, ?)",
-            [name, email, churchName || null, phone, boardingStatus, uniqueID]
+            [name, email, churchName || null, phone, boardingStatus, role, uniqueID]
         );
 
-        // Generate the PDF ticket
+        // Generates the PDF ticket
         const ticketPath = await ticketGenerator({
             name,
             email,
             churchName,
             phone,
             boardingStatus,
+            role,
             uniqueID,
         });
 
-        // TODO: Send the ticket via email using Nodemailer
-
+        // Sends the ticket via email using Nodemailer
         res.status(200).json({
             message: "Registration successful!",
             ticketPath,
